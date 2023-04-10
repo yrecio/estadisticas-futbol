@@ -1,5 +1,5 @@
 // tabla dinamica
-import { datos } from './datos-futbol.js';
+import { datos } from 'https://yrecio.github.io/estadisticas-futbol/recursos/datos-futbol.js';
 
 
 let id = []
@@ -24,7 +24,7 @@ let tabla = `
     <table>
         <thead>
             <tr>
-                <th class="Equipo">Equipo</th>
+                <th>Equipo</th>
                 <th>Goles a favor de cabeza</th>
                 <th>Goles a favor con el pie izquierdo</th>
                 <th>Goles a favor con el pie derecho</th>
@@ -37,5 +37,4 @@ let tabla = `
     </table>
 `;
 
-tablaD.style.backgroundColor = "#6ab150";
-tablaD.innerHTML = tabla;
+	tablaD.innerHTML = tabla;
