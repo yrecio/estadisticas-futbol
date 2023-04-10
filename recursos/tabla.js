@@ -37,4 +37,3 @@ let tabla = `
     </table>
 `;
 
-tablaD.style.backgroundColor = "#6ab150";
