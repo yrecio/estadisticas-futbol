@@ -24,7 +24,10 @@ let tabla = `
     <table>
         <thead>
             <tr>
-                <th>Equipo</th>
+                <th style="background-color:#eff3f3;
+                color: black;
+                text-align: left;
+                padding: 0.5rem"> Equipo</th>
                 <th>Goles a favor de cabeza</th>
                 <th>Goles a favor con el pie izquierdo</th>
                 <th>Goles a favor con el pie derecho</th>
@@ -37,4 +40,9 @@ let tabla = `
     </table>
 `;
 
-	tablaD.innerHTML = tabla;
+tablaD.style = {
+    background-color: #00bcd4;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem
+}
