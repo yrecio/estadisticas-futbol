@@ -24,7 +24,7 @@ let tabla = `
     <table>
         <thead>
             <tr>
-                <th style="color: red">Equipo</th>
+                <th>Equipo</th>
                 <th>Goles a favor de cabeza</th>
                 <th>Goles a favor con el pie izquierdo</th>
                 <th>Goles a favor con el pie derecho</th>
@@ -37,3 +37,4 @@ let tabla = `
     </table>
 `;
 
+tablaD.style.backgroundColor = "#6ab150";
