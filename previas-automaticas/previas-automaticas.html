@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Previa LaLiga</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="icon" href="https://www.epdata.es/favicon.ico" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+	<style>
+	
+	@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+		button {
+			margin: 0.8rem;
+			padding:0.2rem;
+			font-size:1.2rem;
+			font-weight:bold;
+			background-color: #00bcd4;
+			color: white;
+			height: 2rem;
+			width: 18rem;
+			border:#87afb1;
+		}
+
+		button:hover {
+			background-color: #8dd0d4;
+			cursor: pointer;
+		}
+	
+		button:active {
+			background-color: #007780;
+			transform: scale(0.95);
+		}
+
+	</style>
+
+
+	<main style="width: 1660px; height:928px; background-color: white; text-align: center; border: 0.2px solid black;">
+		<div id="titulos"
+			style="z-index: 1; height: 13%; margin: 30px 1rem 6px 1rem; display: flex; justify-content: space-around; align-items:center;">
+
+			<div style="width:23%; height: 100%; z-index: 2;">
+				<img id="escudo1" style="transform:translate(-77px, 1px);z-index:2; height: 171%;" />
+			</div>
+			<div id="bloque-titulos" style="display:flex; flex-direction: column">
+				<h3 id="antetitulo"
+					style="color: #b8b8b8; font-family: 'Heebo'; font-size: 1.5rem; margin: 0; width: 100%;">
+					<span id="dia-semana" style="text-transform: capitalize">Antetítulo</span><span
+						id="resto-antetitulo"></span>
+				</h3>
+				<h2 id="titulo"
+					style="color: #020202; font-family: 'Heebo'; font-size: 2.5rem; margin: 0; width: 100%;">
+					Título Principal
+				</h2>
+				<h3 id="subtitulo"
+					style="color: #5e5e5e; font-family: 'Heebo'; font-size: 1.5rem; margin: 0; width: 100%;">
+					Estadísticas por partido
+				</h3>
+			</div>
+			<div style="width:23%; height: 100%; z-index: 2;">
+				<img id="escudo2" style="height: 171%;transform: translate(85px, 1px);" />
+			</div>
+		</div>
+		<div id="bloque-svg" style="width: 90%; margin:auto; height: 700px">
+
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px"
+				viewBox="0 0 1463.4 665.5" style="enable-background:new 0 0 1463.4 665.5;" xml:space="preserve">
+
+				<style type="text/css">
+					#Capa_1 {}
+
+					.st0 {
+						fill-rule: evenodd;
+						clip-rule: evenodd;
+						fill: #cfb4b4;
+						filter: brightness(80%)
+					}
+
+					.st1 {
+						fill-rule: evenodd;
+						clip-rule: evenodd;
+						fill: #333333;
+					}
+
+					.st2 {
+						fill-rule: evenodd;
+						clip-rule: evenodd;
+						fill: #66CC99;
+						filter: brightness(80%)
+					}
+
+					.st3 {
+						fill: none;
+						stroke: #ffffff;
+						stroke-width: 1;
+						stroke-linecap: square;
+						stroke-miterlimit: 10;
+					}
+
+					.st4 {
+						fill: none;
+						stroke: #000000;
+						stroke-width: 5;
+						stroke-miterlimit: 10;
+					}
+
+					.st5 {
+						font-family: 'Heebo';
+						font-size: 25.1934px;
+						text-align: center;
+						width: 4rem;
+						fill: white;
+						text-shadow: 2px 0px 1px rgba(0, 0, 0, 0.5);
+					}
+
+					.st6 {
+						font-family: 'Heebo';
+						font-size: 25.1934px;
+						text-align: right;
+						width: 4rem;
+						fill: white;
+						text-shadow: 2px 0px 1px rgba(0, 0, 0, 0.5);
+					}
+
+					.st7 {
+						font-size: 25.1934px;
+						font-family: 'Heebo';
+						text-align: center;
+						font-weight: bold;
+						fill: white;
+						text-shadow: 2px 0px 1px rgba(0, 0, 0, 0.5);
+					}
+
+					.st8 {
+						font-size: 25.1934px;
+						color: #00bcd4;
+						font-family: 'Heebo';
+					}
+
+					.st9 {
+						fill-rule: evenodd;
+						clip-rule: evenodd;
+						fill: #ffffff;
+						opacity: 0.5;
+					}
+				</style>
+				<rect x="1.1" y="45.5" class="st0" width="562.1" height="201.9" />
+				<rect x="901.3" y="45.5" class="st2" width="562.1" height="201.9" />
+				<rect x="1.1" y="254.4" class="st0" width="562.1" height="201.9" />
+				<rect x="901.3" y="254.4" class="st2" width="562.1" height="201.9" />
+				<rect x="1.1" y="463.3" class="st0" width="562.1" height="201.9" />
+				<rect x="901.3" y="463.3" class="st2" width="562.1" height="201.9" />
+				<rect x="1338" y="45.5" class="st9" width="130" height="640"></rect>
+				<rect x="1.1" y="45.5" class="st9" width="130" height="640"></rect>
+				<line class="st3" x1="1.1" y1="113.4" x2="563.1" y2="113.4" />
+				<line class="st3" x1="901.3" y1="113.4" x2="1463.2" y2="113.4" />
+				<line class="st3" x1="1.1" y1="179.5" x2="563.1" y2="179.5" />
+				<line class="st3" x1="901.3" y1="179.5" x2="1463.2" y2="179.5" />
+				<line class="st3" x1="1.1" y1="322.4" x2="563.1" y2="322.4" />
+				<line class="st3" x1="901.3" y1="322.4" x2="1463.2" y2="322.4" />
+				<line class="st3" x1="1.1" y1="388.5" x2="563.1" y2="388.5" />
+				<line class="st3" x1="901.3" y1="388.5" x2="1463.2" y2="388.5" />
+				<line class="st3" x1="1.1" y1="529.6" x2="563.1" y2="529.6" />
+				<line class="st3" x1="901.3" y1="529.6" x2="1463.2" y2="529.6" />
+				<line class="st3" x1="1.1" y1="597.6" x2="563.1" y2="597.6" />
+				<line class="st3" x1="901.3" y1="597.6" x2="1463.2" y2="597.6" />
+				<line class="st4" x1="443" y1="44.9" x2="443" y2="664.6" />
+				<line class="st4" x1="1019.9" y1="45.7" x2="1019.9" y2="665.5" />
+				<g>
+					<text transform="matrix(0.9994 0 0 1 339.7364 90.1907)" class="st7">Goles</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 90.1907)" class="st5" id="Goles_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 952.7869 90.1907)" class="st6" id="Goles_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1059.4702 90.1907)" class="st7">Goles</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 218.2236 157.4993)" class="st7">Goles esperados</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 157.4993)" class="st5" id="Goles_esperados_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 954.7869 157.4993)" class="st6" id="Goles_esperados_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1058.0576 157.4993)" class="st7">Goles esperados</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 304.601 224.8079)" class="st7">Remates</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 224.8079)" class="st5" id="Remates_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 940.7869 224.8079)" class="st6" id="Remates_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1059.4351 224.8079)" class="st7">Remates</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 228.8146 299.1145)" class="st7">Goles recibidos</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 299.1145)" class="st5" id="Goles_recibidos_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 952.7869 299.1145)" class="st6" id="Goles_recibidos_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1059.6484 299.1145)" class="st7">Goles recibidos</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 194.7919 366.4036)" class="st7">Remates recibidos</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 366.4036)" class="st5" id="Remates_recibidos_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 939.7869 366.4036)" class="st6" id="Remates_recibidos_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1059.6255 366.4036)" class="st7">Remates recibidos</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 224.4413 433.6927)" class="st7">Recuperaciones</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 433.6927)" class="st5"
+					id="Recuperaciones_en_campo_rival_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 940.7869 433.6927)" class="st6"
+					id="Recuperaciones_en_campo_rival_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1060.2749 433.6927)" class="st7">Recuperaciones</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 259.3935 507.9993)" class="st7">Posesión (%)</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 507.9993)" class="st5" id="__posesion_de_balon_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 943.7869 507.9993)" class="st6" id="__posesion_de_balon_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1060.2271 507.9993)" class="st7">Posesión (%)</text>
+				</g>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 175.9064 575.2883)" class="st7">Acierto en pases (%)</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 575.2883)" class="st5" id="__acierto_en_pases_1">0</text>
+				<text transform="matrix(0.9994 0 0 1 943.7869 575.2883)" class="st6" id="__acierto_en_pases_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1055.7397 575.2883)" class="st7">Acierto en pases (%)</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 952.7869 640.5969)" class="st5" id="Pases_por_posesion_2">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 188.3933 639.6836)" class="st7">Pases por posesión</text>
+				</g>
+				<text transform="matrix(0.9994 0 0 1 478.0697 640.6836)" class="st6" id="Pases_por_posesion_1">0</text>
+				<g>
+					<text transform="matrix(0.9994 0 0 1 1054.2273 639.6836)" class="st7">Pases por posesión</text>
+				</g>
+			</svg>
+
+			<div id="imagenes-centrales" style="width: 364px;transform: translate(566px, -659px) scale(0.94);">
+				<img src="img/ofensivo.jpg" style="width: 364px; z-index: 2; margin-bottom:0.2rem">
+				<img src="img/defensivo.jpg" style="width: 364px; z-index: 2; margin-bottom:0.2rem">
+				<img src="img/distribucion.jpg" style="width: 363px; z-index: 2;">
+			</div>
+
+		</div>
+
+		<footer style="display: flex; justify-content: space-around">
+			<p style="font-size:1.5rem; font-family: Heebo; color: #00bcd4; margin: 0px">Datos de
+				<b>Driblab</b>
+			</p>
+			<img src="img/logoepdata.jpg" style="width: 7rem;" />
+		</footer>
+
+	</main>
+
+
+	<div style="padding-top: 100px; width: 80%; margin:2rem; padding-bottom: 5rem; display:flex; justify-content: space-around;">
+		<button id="descarga-imagen">Descargar imagen</button>
+
+		<div
+			style="text-align: center; margin-top: -50px; display: flex; align-items: center; justify-content: center;">
+			<textarea id="jsonData" style="width: 100%; height: 220px; margin-top: 2rem; font-size:1.2rem"></textarea>
+			<button id="updateContent">Actualizar datos</button>
+		</div>
+
+	</div>
+
+	<script>
+
+		function replaceDotWithComma(value) {
+			if (typeof value === 'string' || typeof value === 'number') {
+				return String(value).replace('.', ',');
+			}
+			return value;
+		}
+
+		let coloresClubes = {
+			"Alavés": "#0B37A2",
+			"Girona": "#CF172F",
+			"Osasuna": "#BC131A",
+			"Barcelona": "#004999",
+			"Almería": "#ED1B24",
+			"Real Sociedad": "#0067B1",
+			"Rayo Vallecano": "#BFAE30",
+			"Las Palmas": "#FFE400",
+			"Real Betis": "#00954C",
+			"Atlético de Madrid": "#CB3524",
+			"Athletic Club": "#E20A17",
+			"Mallorca": "#C20E1A",
+			"Sevilla": "#D70F21",
+			"Celta de Vigo": "#6CADE5",
+			"Valencia": "#ff671f",
+			"Getafe": "#006DAF",
+			"Villarreal": "#00366b",
+			"Granada": "#C31632",
+			"Cádiz": "#0045A7",
+			"Real Madrid": "#7d5e9b",
+		};
+
+		let logosClubes = {
+			"Alavés": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/alaves.png',
+			"Girona": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/girona.png',
+			"Osasuna": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/osasuna.png',
+			"Barcelona": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/barcelona.png',
+			"Almería": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/ud-almeria.png',
+			"Real Sociedad": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realsociedad.png',
+			"Rayo Vallecano": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/rayo.png',
+			"Las Palmas": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/las-palmas.png',
+			"Real Betis": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realbetis.png',
+			"Atlético de Madrid": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/atletico.png',
+			"Athletic Club": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/athletic.png',
+			"Mallorca": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/mallorca.png',
+			"Sevilla": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/sevilla.png',
+			"Celta de Vigo": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/celta.png',
+			"Valencia": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/valencia.png',
+			"Getafe": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/getafe.png',
+			"Villarreal": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/villareal.png',
+			"Granada": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/granada.png',
+			"Cádiz": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/cadiz.png',
+			"Real Madrid": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realmadrid.png',
+		};
+
+		document.getElementById("updateContent").addEventListener("click", function () {
+			let jsonData = document.getElementById("jsonData").value;
+
+			if (jsonData) {
+				try {
+					let data = JSON.parse(jsonData);
+
+					document.getElementById("dia-semana").innerHTML = data.Dia;
+					document.getElementById("resto-antetitulo").innerHTML = " a las " + data.Hora + " horas";
+					document.getElementById("titulo").innerHTML = data.Equipo_1 + " vs " + data.Equipo_2;
+					document.getElementById("Goles_1").innerHTML = replaceDotWithComma(data.Goles_1);
+					document.getElementById("Goles_2").innerHTML = replaceDotWithComma(data.Goles_2);
+					document.getElementById("Goles_esperados_1").innerHTML = replaceDotWithComma(data.Goles_esperados_1);
+					document.getElementById("Goles_esperados_2").innerHTML = replaceDotWithComma(data.Goles_esperados_2);
+					document.getElementById("Remates_1").innerHTML = replaceDotWithComma(data.Remates_1);
+					document.getElementById("Remates_2").innerHTML = replaceDotWithComma(data.Remates_2);
+					document.getElementById("Goles_recibidos_1").innerHTML = replaceDotWithComma(data.Goles_recibidos_1);
+					document.getElementById("Goles_recibidos_2").innerHTML = replaceDotWithComma(data.Goles_recibidos_2);
+					document.getElementById("Remates_recibidos_1").innerHTML = replaceDotWithComma(data.Remates_recibidos_1);
+					document.getElementById("Remates_recibidos_2").innerHTML = replaceDotWithComma(data.Remates_recibidos_2);
+					document.getElementById("Recuperaciones_en_campo_rival_1").innerHTML = replaceDotWithComma(data.Recuperaciones_en_campo_rival_1);
+					document.getElementById("Recuperaciones_en_campo_rival_2").innerHTML = replaceDotWithComma(data.Recuperaciones_en_campo_rival_2);
+					document.getElementById("__posesion_de_balon_1").innerHTML = replaceDotWithComma(data.__posesion_de_balon_1) + "%";
+					document.getElementById("__posesion_de_balon_2").innerHTML = replaceDotWithComma(data.__posesion_de_balon_2) + "%";
+					document.getElementById("__acierto_en_pases_1").innerHTML = replaceDotWithComma(data.__acierto_en_pases_1) + "%";
+					document.getElementById("__acierto_en_pases_2").innerHTML = replaceDotWithComma(data.__acierto_en_pases_2) + "%";
+					document.getElementById("Pases_por_posesion_1").innerHTML = replaceDotWithComma(data.Pases_por_posesion_1);
+					document.getElementById("Pases_por_posesion_2").innerHTML = replaceDotWithComma(data.Pases_por_posesion_2);
+
+					if (coloresClubes[data.Equipo_1]) {
+						let rectsEquipo1 = document.querySelectorAll('.st0');
+						rectsEquipo1.forEach(rect => {
+							rect.style.fill = coloresClubes[data.Equipo_1];
+						});
+					}
+
+					if (coloresClubes[data.Equipo_2]) {
+						let rectsEquipo2 = document.querySelectorAll('.st2');
+						rectsEquipo2.forEach(rect => {
+							rect.style.fill = coloresClubes[data.Equipo_2];
+						});
+					}
+
+					if (logosClubes[data.Equipo_1]) {
+						document.getElementById("escudo1").src = logosClubes[data.Equipo_1];
+					}
+
+					if (logosClubes[data.Equipo_2]) {
+						document.getElementById("escudo2").src = logosClubes[data.Equipo_2];
+					}
+
+				} catch (e) {
+					console.error("Error al parsear el JSON:", e);
+				}
+			} else {
+				console.log("Por favor, introduce datos en el textarea");
+			}
+		});
+
+		document.getElementById("descarga-imagen").addEventListener("click", function () {
+			// Obtener el elemento que queremos capturar
+			let main = document.querySelector("main");
+
+			// Usar html2canvas para obtener el canvas del elemento
+			html2canvas(main, {
+				scale: 2  // Escala el canvas al doble de su tamaño original
+			}).then(canvas => {
+				// Crear un elemento <a> para la descarga
+				let a = document.createElement("a");
+				a.href = canvas.toDataURL("image/jpg");
+				a.download = "previa.jpg";
+
+				// Simular un click en el enlace para iniciar la descarga
+				a.click();
+			});
+		});
+
+	</script>
+
+</body>
+
+</html>

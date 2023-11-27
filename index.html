@@ -1,14 +1,57 @@
-<html>
-    <head>
-    </head>
-    <body>
-	<section id="estadisticas-futbol">
-        <h2 id="titulo" >Estadísticas LaLiga Santander 2022/2023</h2>
-        <h3 id="subtitulo">Goles a favor</h3>
-        <div id="tablaD">
-        </div>
-    <script type="module" src="https://yrecio.github.io/estadisticas-futbol/recursos/tabla.js"></script>
-    <script src="https://yrecio.github.io/estadisticas-futbol/recursos/datos-futbol.js"></script>
-	</section>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infografías LaLiga</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="icon" href="https://www.epdata.es/favicon.ico" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+		button {
+			margin: 0.8rem;
+			padding: 0.2rem;
+			font-size: 1.2rem;
+			font-weight: bold;
+			background-color: #00bcd4;
+			color: white;
+			height: 2rem;
+			width: 18rem;
+			border: #87afb1;
+		}
+
+		button:hover {
+			background-color: #8dd0d4;
+			cursor: pointer;
+		}
+
+		button:active {
+			background-color: #007780;
+			transform: scale(0.95);
+		}
+	</style>
+
+	<div id="login" style="padding: 15rem">
+		<input style="transform:scale(1.5); margin: 5rem" type="password" id="passwordInput">
+		<button onclick="checkPassword()">Entrar</button>
+	</div>
+
+	<div id="content" style="display:none;">
+		<a href="previas-automaticas/previas-automaticas.html"><button>Comparación de equipos</button></a>
+		<a href="estadisticas-jugadores/uno.html"><button>Estadísticas de un jugador</button></a>
+	</div>
+	<script src="main.js"></script>
+
+</body>
+
 </html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infografías LaLiga</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="icon" href="https://www.epdata.es/favicon.ico" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+		html {
+			font-family: 'Heebo';
+		}
+
+		button {
+			margin: 0.8rem;
+			padding: 0.2rem;
+			font-size: 1.2rem;
+			font-weight: bold;
+			background-color: #00bcd4;
+			color: white;
+			height: 2rem;
+			width: 18rem;
+			border: #87afb1;
+		}
+
+		button:hover {
+			background-color: #8dd0d4;
+			cursor: pointer;
+		}
+
+		button:active {
+			background-color: #007780;
+			transform: scale(0.95);
+		}
+
+		.bloque-estadistica {
+			height: 100%;
+			width: 30%;
+			background-color: #f1f1f1;
+			margin-left: 1rem;
+			margin-top: 2rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			text-align: left;
+			font-weight: bold;
+			font-size: 1.6rem;
+		}
+
+		.num {
+			font-size: 4rem;
+			color: black;
+			line-height: 4rem;
+		}
+
+		.bloque-estadistica p {
+			margin-left: 1.5rem;
+			margin-right: 1.8rem;
+			line-height: 2rem;
+			color: rgb(116, 116, 116);
+		}
+
+
+		#primera-linea-estadisticas {
+			height: 40%;
+			width: 100%;
+		}
+
+		#segunda-linea-estadisticas {
+			height: 40%;
+			width: 100%;
+			margin-top: 1rem;
+		}
+	</style>
+
+	<main style="width: 1660px; height:928px; background-color: white; border: 0.2px solid black;">
+		<div id="titulos"
+			style="z-index: 1; width: 100%; height: 13%; margin: 40px 1rem 6px 1rem; display: flex; justify-content: space-around; align-items:center;">
+
+			<div id="escudo" style="margin-left: 4rem; width: 6%; height: 100%">
+				<img src="" id="imagenEscudo" style="width: auto; height: 95%">
+			</div>
+
+			<div id="bloque-titulos" style="margin-left: 2.8rem; display:flex; width:100%; flex-direction: column">
+				<h3 id="antetitulo"
+					style="color: #b8b8b8; font-family: 'Heebo'; font-size: 1.5rem; margin: 0; width: 100%;">
+					<span id="dia-semana" style="text-transform: capitalize"></span><span id="resto-antetitulo"></span>
+				</h3>
+				<h2 id="titulo"
+					style="color: #020202; font-family: 'Heebo'; font-size: 2rem; margin: 0; width: 100%;">
+
+				</h2>
+				<h3 id="subtitulo"
+					style="color: #5e5e5e; font-family: 'Heebo'; font-size: 1.5rem; margin: 0; width: 100%;">
+
+				</h3>
+			</div>
+
+		</div>
+
+		<div id="contenido-infografia" style="height:75%; display: flex; padding-top:1rem">
+			<div id="bloque-estadisticas"
+				style="width: 80%; height: 95%; margin-left: 5rem; display:flex; flex-direction: column">
+				<div id="primera-linea-estadisticas" style="display: flex; flex-direction: row">
+					<div class="bloque-estadistica" id="estadica-1">
+					</div>
+					<div class="bloque-estadistica" id="estadica-2"></div>
+					<div class="bloque-estadistica" id="estadica-3"></div>
+				</div>
+				<div id="segunda-linea-estadisticas" style="display: flex; flex-direction: row">
+					<div class="bloque-estadistica" id="estadica-4"></div>
+					<div class="bloque-estadistica" id="estadica-5"></div>
+					<div class="bloque-estadistica" id="estadica-6"></div>
+				</div>
+			</div>
+			<div id="bloque-silueta-jugador" style="width: 20%; height: 95%; margin-right: 5rem">
+				<img style="height:120%; transform: translate(-61px, -129px)" src="./img/silueta.png">
+			</div>
+		</div>
+
+		<footer style="display: flex; justify-content: space-around">
+			<p style="font-size:1.5rem; font-family: Heebo; color: #00bcd4; margin: 0px">Datos de
+				<b>Driblab</b>
+			</p>
+			<img src="img/logoepdata.jpg" style="width: 7rem;" />
+		</footer>
+
+	</main>
+
+
+
+	<div
+		style="padding-top: 100px; width: 80%; margin:2rem; padding-bottom: 5rem; display:flex; justify-content: space-around;">
+
+		<div id="formulario-titulares" style="height: 100%; display: flex; flex-direction: column;">
+			<p style="color: rgb(117, 117, 117)">Textos de la parte superior de la infografía</p>
+
+			<div style="text-align: right; margin-top: 3px; display: flex; align-items: center;">
+				<textarea id="actualizar-antetitulo"
+					style="width: 50%; height: 40px; margin-top: 0rem; font-size:1.2rem"></textarea>
+				<button id="boton-actualizar-antetitulo" style="width: 50%">Actualizar antetítulo</button>
+			</div>
+
+			<div style="text-align: right; margin-top: 3px; display: flex; align-items: center;">
+				<textarea id="actualizar-titular"
+					style="width: 50%; height: 40px; margin-top: 0rem; font-size:1.2rem"></textarea>
+				<button id="boton-actualizar-titular" style="width: 50%">Actualizar titular</button>
+			</div>
+			<div style="text-align: right; margin-top: 3px; display: flex; align-items: center;">
+				<textarea id="actualizar-subtitulo"
+					style="width: 50%; height: 40px; margin-top: 0rem; font-size:1.2rem"></textarea>
+				<button id="boton-actualizar-subtitulo" style="width: 50%">Actualizar subtítulo</button>
+			</div>
+		</div>
+
+		<div
+			style="text-align: center; margin-top: -50px; display: flex; align-items: center; justify-content: center; flex-direction:column">
+
+			<p style="color: rgb(117, 117, 117); padding-top: 2rem; padding-bottom:0; margin-bottom:0">Pegar debajo
+				código para actualizar datos del jugador:</p>
+			<textarea id="jsonData" onfocus="clearText(this)"
+				style="width: 100%; height: 120px; margin-top: 1rem; font-size:1.2rem"></textarea>
+			<button id="updateContent" style="width: 100%">Actualizar datos del jugador</button>
+			<hr style="width: 100%">
+			<button id="descarga-imagen" style="background-color: #00343b; width: 100%">Descargar imagen</button>
+
+		</div>
+
+
+
+		<div style="display:flex; flex-direction: column;">
+
+			<div style="display:flex; flex-direction: row;">
+				<p style="color: rgb(117, 117, 117)">Posición 1:</p>
+				<select id="seleccionarEquipo1"
+					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
+					onchange="cambiarposicion1()">
+					<option value=""></option>
+					<option value="GO">GO (Goles)</option>
+					<option value="AS">AS (Asistencias)</option>
+					<option value="PC">PC (Pases completados)</option>
+					<option value="RC">RC (Regates completados)</option>
+					<option value="CA">CA (Centros al área)</option>
+					<option value="FP">FP (Faltas provocadas)</option>
+					<option value="TA">TA (Tarjetas Amarillas)</option>
+					<option value="TR">TR (Tarjetas Rojas)</option>
+					<option value="MJ">MJ (Minutos jugados)</option>
+					<option value="PA">PA (Paradas)</option>
+				</select>
+			</div>
+
+			<div style="display:flex; flex-direction: row;">
+				<p style="color: rgb(117, 117, 117)">Posición 2:</p>
+				<select id="seleccionarEquipo2"
+					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
+					onchange="cambiarposicion2()">
+					<option value=""></option>
+					<option value="GO">GO (Goles)</option>
+					<option value="AS">AS (Asistencias)</option>
+					<option value="PC">PC (Pases completados)</option>
+					<option value="RC">RC (Regates completados)</option>
+					<option value="CA">CA (Centros al área)</option>
+					<option value="FP">FP (Faltas provocadas)</option>
+					<option value="TA">TA (Tarjetas Amarillas)</option>
+					<option value="TR">TR (Tarjetas Rojas)</option>
+					<option value="MJ">MJ (Minutos jugados)</option>
+					<option value="PA">PA (Paradas)</option>
+				</select>
+			</div>
+
+			<div style="display:flex; flex-direction: row;">
+				<p style="color: rgb(117, 117, 117)">Posición 3:</p>
+				<select id="seleccionarEquipo3"
+					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
+					onchange="cambiarposicion3()">
+					<option value=""></option>
+					<option value="GO">GO (Goles)</option>
+					<option value="AS">AS (Asistencias)</option>
+					<option value="PC">PC (Pases completados)</option>
+					<option value="RC">RC (Regates completados)</option>
+					<option value="CA">CA (Centros al área)</option>
+					<option value="FP">FP (Faltas provocadas)</option>
+					<option value="TA">TA (Tarjetas Amarillas)</option>
+					<option value="TR">TR (Tarjetas Rojas)</option>
+					<option value="MJ">MJ (Minutos jugados)</option>
+					<option value="PA">PA (Paradas)</option>
+				</select>
+			</div>
+
+			<div style="display:flex; flex-direction: row;">
+				<p style="color: rgb(117, 117, 117)">Posición 4:</p>
+				<select id="seleccionarEquipo4"
+					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
+					onchange="cambiarposicion4()">
+					<option value=""></option>
+					<option value="GO">GO (Goles)</option>
+					<option value="AS">AS (Asistencias)</option>
+					<option value="PC">PC (Pases completados)</option>
+					<option value="RC">RC (Regates completados)</option>
+					<option value="CA">CA (Centros al área)</option>
+					<option value="FP">FP (Faltas provocadas)</option>
+					<option value="TA">TA (Tarjetas Amarillas)</option>
+					<option value="TR">TR (Tarjetas Rojas)</option>
+					<option value="MJ">MJ (Minutos jugados)</option>
+					<option value="PA">PA (Paradas)</option>
+				</select>
+			</div>
+
+			<div style="display:flex; flex-direction: row;">
+				<p style="color: rgb(117, 117, 117)">Posición 5:</p>
+				<select id="seleccionarEquipo5"
+					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
+					onchange="cambiarposicion5()">
+					<option value=""></option>
+					<option value="GO">GO (Goles)</option>
+					<option value="AS">AS (Asistencias)</option>
+					<option value="PC">PC (Pases completados)</option>
+					<option value="RC">RC (Regates completados)</option>
+					<option value="CA">CA (Centros al área)</option>
+					<option value="FP">FP (Faltas provocadas)</option>
+					<option value="TA">TA (Tarjetas Amarillas)</option>
+					<option value="TR">TR (Tarjetas Rojas)</option>
+					<option value="MJ">MJ (Minutos jugados)</option>
+					<option value="PA">PA (Paradas)</option>
+				</select>
+			</div>
+
+			<div style="display:flex; flex-direction: row;">
+				<p style="color: rgb(117, 117, 117)">Posición 6:</p>
+				<select id="seleccionarEquipo6"
+					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
+					onchange="cambiarposicion6()">
+					<option value=""></option>
+					<option value="GO">GO (Goles)</option>
+					<option value="AS">AS (Asistencias)</option>
+					<option value="PC">PC (Pases completados)</option>
+					<option value="RC">RC (Regates completados)</option>
+					<option value="CA">CA (Centros al área)</option>
+					<option value="FP">FP (Faltas provocadas)</option>
+					<option value="TA">TA (Tarjetas Amarillas)</option>
+					<option value="TR">TR (Tarjetas Rojas)</option>
+					<option value="MJ">MJ (Minutos jugados)</option>
+					<option value="PA">PA (Paradas)</option>
+				</select>
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+	<script src="main.js"></script>
+
+
+	<script>
+
+		document.getElementById('boton-actualizar-antetitulo').addEventListener('click', function () {
+			var antetitulo = document.getElementById('actualizar-antetitulo').value;
+			document.getElementById('antetitulo').textContent = antetitulo;
+		});
+
+		document.getElementById('boton-actualizar-titular').addEventListener('click', function () {
+			var titulo = document.getElementById('actualizar-titular').value;
+			document.getElementById('titulo').textContent = titulo;
+		});
+
+		document.getElementById('boton-actualizar-subtitulo').addEventListener('click', function () {
+			var subtitulo = document.getElementById('actualizar-subtitulo').value;
+			document.getElementById('subtitulo').textContent = subtitulo;
+		});
+
+		document.getElementById("updateContent").addEventListener("click", function () {
+			let jsonData = document.getElementById("jsonData").value;
+
+			if (jsonData) {
+				try {
+					let data = JSON.parse(jsonData);
+
+					// Recorre cada select y actualiza el bloque correspondiente
+					for (let i = 1; i <= 6; i++) {
+						let tipoEstadistica = document.getElementById(`seleccionarEquipo${i}`).value;
+						actualizarBloqueEstadistica(i, tipoEstadistica, data[tipoEstadistica]);
+					}
+
+					let equipo = data.Equipo;
+					if (logosClubes[equipo]) {
+						document.getElementById("imagenEscudo").src = logosClubes[equipo];
+						actualizarColorTexto(equipo); 
+					} else {
+						console.log("Equipo no encontrado en la lista.");
+						document.getElementById("imagenEscudo").src = ''; // O una imagen por defecto
+					}
+
+				} catch (e) {
+					console.error("Error al parsear el JSON:", e);
+				}
+			} else {
+				console.log("Por favor, introduce datos en el textarea");
+			}
+		});
+
+		function actualizarBloqueEstadistica(posicion, tipo, valor) {
+			let bloque = document.getElementById(`estadica-${posicion}`);
+			if (bloque && valor !== undefined) {
+				bloque.innerHTML = generarContenidoBloque(tipo, valor);
+			}
+		}
+
+		function actualizarColorTexto(equipo) {
+			let color = coloresClubes[equipo];
+			if (color) {
+				let spans = document.querySelectorAll('span'); // Ajustar el selector según sea necesario
+				spans.forEach(span => {
+					span.style.color = color;
+				});
+			}
+		}
+
+		function generarContenidoBloque(tipo, valor) {
+			switch (tipo) {
+				case 'GO':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="/img/GO.png">
+                    <p><span class="num">${valor}</span><br>Goles<br>a favor</p>`;
+				case 'AS':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem; padding-left: 0.8rem" src="/img/AS.png">
+                    <p style="transform: translate(-17px, 10px)"><span class="num">${valor}</span><br>Asistencias</p>`;
+				case 'PC':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="/img/PC.png">
+                    <p><span class="num">${valor}</span><br>Pases<br>completados</p>`;
+				case 'RC':
+					return `<img style="z-index:2; width: 40%; height: auto; margin: 0.8rem; padding-left: 0.3rem" src="/img/RC.png">
+                    <p style="transform: translate(-17px, 10px)"><span class="num">${valor}</span><br>Regates<br>completados</p>`;
+				case 'CA':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem; padding-left: 0.8rem" src="/img/CA.png">
+                    <p><span class="num">${valor}</span><br>Centros<br>al área</p>`;
+				case 'FP':
+					return `<img style="z-index:2; width: auto; height: 90%; margin: 0.4rem; padding-left: 2rem" src="/img/FP.png">
+                    <p><span class="num">${valor}</span><br>Faltas<br>provocadas</p>`;
+				case 'TA':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="/img/TA.png">
+                    <p><span class="num">${valor}</span><br>Tarjetas<br>amarillas</p>`;
+				case 'TR':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="/img/TR.png">
+                    <p><span class="num">${valor}</span><br>Tarjetas<br>rojas</p>`;
+				case 'MJ':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem;" src="/img/MJ.png">
+                    <p style="transform: translate(-17px, 10px)"><span class="num">${valor}</span><br>Minutos<br>jugados</p>`;
+				case 'PA':
+					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="/img/PA.png">
+                    <p><span class="num">${valor}</span><br>Paradas</p>`;
+				default:
+					return `<p>Dato no disponible</p>`;
+			}
+		}
+
+
+		let coloresClubes = {
+			"Alavés": "#0B37A2",
+			"Girona": "#CF172F",
+			"Osasuna": "#BC131A",
+			"Barcelona": "#004999",
+			"Almería": "#ED1B24",
+			"Real Sociedad": "#0067B1",
+			"Rayo Vallecano": "#BFAE30",
+			"Las Palmas": "#FFE400",
+			"Real Betis": "#00954C",
+			"Atlético de Madrid": "#CB3524",
+			"Athletic Club": "#E20A17",
+			"Mallorca": "#C20E1A",
+			"Sevilla": "#D70F21",
+			"Celta de Vigo": "#6CADE5",
+			"Valencia": "#ff671f",
+			"Getafe": "#006DAF",
+			"Villarreal": "#00366b",
+			"Granada": "#C31632",
+			"Cádiz": "#0045A7",
+			"Real Madrid": "#7d5e9b",
+		};
+
+
+		let logosClubes = {
+			"Alavés": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/alaves.png',
+			"Girona": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/girona.png',
+			"Osasuna": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/osasuna.png',
+			"Barcelona": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/barcelona.png',
+			"Almería": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/ud-almeria.png',
+			"Real Sociedad": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realsociedad.png',
+			"Rayo Vallecano": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/rayo.png',
+			"Las Palmas": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/las-palmas.png',
+			"Real Betis": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realbetis.png',
+			"Atlético de Madrid": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/atletico.png',
+			"Athletic Club": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/athletic.png',
+			"Mallorca": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/mallorca.png',
+			"Sevilla": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/sevilla.png',
+			"Celta de Vigo": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/celta.png',
+			"Valencia": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/valencia.png',
+			"Getafe": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/getafe.png',
+			"Villarreal": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/villareal.png',
+			"Granada": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/granada.png',
+			"Cádiz": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/cadiz.png',
+			"Real Madrid": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realmadrid.png',
+		};
+
+
+
+
+		document.getElementById("descarga-imagen").addEventListener("click", function () {
+			// Obtener el elemento que queremos capturar
+			let main = document.querySelector("main");
+
+			// Usar html2canvas para obtener el canvas del elemento
+			html2canvas(main, {
+				scale: 4  // Escala el canvas al doble de su tamaño original
+			}).then(canvas => {
+				// Crear un elemento <a> para la descarga
+				let a = document.createElement("a");
+				a.href = canvas.toDataURL("image/jpg");
+				a.download = "previa.jpg";
+
+				// Simular un click en el enlace para iniciar la descarga
+				a.click();
+			});
+		});
+
+	</script>
+
+</body>
+
+</html>
