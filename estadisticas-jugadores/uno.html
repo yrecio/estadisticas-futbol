@@ -97,8 +97,7 @@
 					style="color: #b8b8b8; font-family: 'Heebo'; font-size: 1.5rem; margin: 0; width: 100%;">
 					<span id="dia-semana" style="text-transform: capitalize"></span><span id="resto-antetitulo"></span>
 				</h3>
-				<h2 id="titulo"
-					style="color: #020202; font-family: 'Heebo'; font-size: 2rem; margin: 0; width: 100%;">
+				<h2 id="titulo" style="color: #020202; font-family: 'Heebo'; font-size: 2rem; margin: 0; width: 100%;">
 
 				</h2>
 				<h3 id="subtitulo"
@@ -338,7 +337,7 @@
 					let equipo = data.Equipo;
 					if (logosClubes[equipo]) {
 						document.getElementById("imagenEscudo").src = logosClubes[equipo];
-						actualizarColorTexto(equipo); 
+						actualizarColorTexto(equipo);
 					} else {
 						console.log("Equipo no encontrado en la lista.");
 						document.getElementById("imagenEscudo").src = ''; // O una imagen por defecto
@@ -355,20 +354,21 @@
 		});
 
 		function actualizarSiluetaJugador(nombreJugador) {
-    let rutaSilueta = siluetasJugadores[nombreJugador];
-    if (rutaSilueta) {
-        document.getElementById("siluetaJugador").src = rutaSilueta;
-    } else {
-        console.log("Silueta no encontrada para el jugador:", nombreJugador);
-    }
-
-		function actualizarBloqueEstadistica(posicion, tipo, valor) {
-			let bloque = document.getElementById(`estadica-${posicion}`);
-			if (bloque && valor !== undefined) {
-				bloque.innerHTML = generarContenidoBloque(tipo, valor);
+			let rutaSilueta = siluetasJugadores[nombreJugador];
+			if (rutaSilueta) {
+				document.getElementById("siluetaJugador").src = rutaSilueta;
+			} else {
+				console.log("Silueta no encontrada para el jugador:", nombreJugador);
 			}
 		}
-	}
+
+			function actualizarBloqueEstadistica(posicion, tipo, valor) {
+				let bloque = document.getElementById(`estadica-${posicion}`);
+				if (bloque && valor !== undefined) {
+					bloque.innerHTML = generarContenidoBloque(tipo, valor);
+				}
+			}
+		
 
 		function actualizarColorTexto(equipo) {
 			let color = coloresClubes[equipo];
@@ -467,11 +467,11 @@
 
 
 		let siluetasJugadores = {
-			"Bellingham, Jude": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/bellingham.png",
-			"Díaz, Brahim": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/brahim.png",
-			"Kroos, Toni": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/kroos.png",
-			"Sávio": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/savinho.png",
-			"Stuani, Cristhian": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/stuani.png",
+			"Bellingham, Jude": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/bellingham.png",
+			"Díaz, Brahim": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/brahim.png",
+			"Kroos, Toni": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/kroos.png",
+			"Sávio": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/savinho.png",
+			"Stuani, Cristhian": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/stuani.png",
 		};
 
 
