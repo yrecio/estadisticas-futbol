@@ -125,7 +125,7 @@
 				</div>
 			</div>
 			<div id="bloque-silueta-jugador" style="width: 20%; height: 95%; margin-right: 5rem">
-				<img style="height:120%; transform: translate(-61px, -129px)" src="./img/silueta.png">
+				<img id="siluetaJugador" style="height:120%; transform: translate(-61px, -129px)" src="">
 			</div>
 		</div>
 
@@ -344,6 +344,8 @@
 						document.getElementById("imagenEscudo").src = ''; // O una imagen por defecto
 					}
 
+					actualizarSiluetaJugador(data.Jugador);
+
 				} catch (e) {
 					console.error("Error al parsear el JSON:", e);
 				}
@@ -352,12 +354,21 @@
 			}
 		});
 
+		function actualizarSiluetaJugador(nombreJugador) {
+    let rutaSilueta = siluetasJugadores[nombreJugador];
+    if (rutaSilueta) {
+        document.getElementById("siluetaJugador").src = rutaSilueta;
+    } else {
+        console.log("Silueta no encontrada para el jugador:", nombreJugador);
+    }
+
 		function actualizarBloqueEstadistica(posicion, tipo, valor) {
 			let bloque = document.getElementById(`estadica-${posicion}`);
 			if (bloque && valor !== undefined) {
 				bloque.innerHTML = generarContenidoBloque(tipo, valor);
 			}
 		}
+	}
 
 		function actualizarColorTexto(equipo) {
 			let color = coloresClubes[equipo];
@@ -454,6 +465,14 @@
 			"Real Madrid": 'https://yrecio.github.io/previas-automaticas-laliga/img/logos-clubes/realmadrid.png',
 		};
 
+
+		let siluetasJugadores = {
+			"Bellingham, Jude": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/bellingham.png",
+			"Díaz, Brahim": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/brahim.png",
+			"Kroos, Toni": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/kroos.png",
+			"Sávio": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/savinho.png",
+			"Stuani, Cristhian": "https://yrecio.github.io/previas-automaticas-laliga/siluetas/stuani.png",
+		};
 
 
 
