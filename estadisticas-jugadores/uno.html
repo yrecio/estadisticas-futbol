@@ -186,8 +186,12 @@
 					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
 					onchange="cambiarposicion1()">
 					<option value=""></option>
+					<option value="PT">PT (Puntos)</option>
+					<option value="VI">VI (Victorias)</option>
+					<option value="PJ">PJ (Partidos jugados)</option>
 					<option value="GO">GO (Goles)</option>
 					<option value="AS">AS (Asistencias)</option>
+					<option value="RE">RE (Remates)</option>
 					<option value="PC">PC (Pases completados)</option>
 					<option value="RC">RC (Regates completados)</option>
 					<option value="CA">CA (Centros al área)</option>
@@ -205,8 +209,12 @@
 					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
 					onchange="cambiarposicion2()">
 					<option value=""></option>
+					<option value="PT">PT (Puntos)</option>
+					<option value="VI">VI (Victorias)</option>
+					<option value="PJ">PJ (Partidos jugados)</option>
 					<option value="GO">GO (Goles)</option>
 					<option value="AS">AS (Asistencias)</option>
+					<option value="RE">RE (Remates)</option>
 					<option value="PC">PC (Pases completados)</option>
 					<option value="RC">RC (Regates completados)</option>
 					<option value="CA">CA (Centros al área)</option>
@@ -224,8 +232,12 @@
 					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
 					onchange="cambiarposicion3()">
 					<option value=""></option>
+					<option value="PT">PT (Puntos)</option>
+					<option value="VI">VI (Victorias)</option>
+					<option value="PJ">PJ (Partidos jugados)</option>
 					<option value="GO">GO (Goles)</option>
 					<option value="AS">AS (Asistencias)</option>
+					<option value="RE">RE (Remates)</option>
 					<option value="PC">PC (Pases completados)</option>
 					<option value="RC">RC (Regates completados)</option>
 					<option value="CA">CA (Centros al área)</option>
@@ -243,8 +255,12 @@
 					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
 					onchange="cambiarposicion4()">
 					<option value=""></option>
+					<option value="PT">PT (Puntos)</option>
+					<option value="VI">VI (Victorias)</option>
+					<option value="PJ">PJ (Partidos jugados)</option>
 					<option value="GO">GO (Goles)</option>
 					<option value="AS">AS (Asistencias)</option>
+					<option value="RE">RE (Remates)</option>
 					<option value="PC">PC (Pases completados)</option>
 					<option value="RC">RC (Regates completados)</option>
 					<option value="CA">CA (Centros al área)</option>
@@ -262,8 +278,12 @@
 					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
 					onchange="cambiarposicion5()">
 					<option value=""></option>
+					<option value="PT">PT (Puntos)</option>
+					<option value="VI">VI (Victorias)</option>
+					<option value="PJ">PJ (Partidos jugados)</option>
 					<option value="GO">GO (Goles)</option>
 					<option value="AS">AS (Asistencias)</option>
+					<option value="RE">RE (Remates)</option>
 					<option value="PC">PC (Pases completados)</option>
 					<option value="RC">RC (Regates completados)</option>
 					<option value="CA">CA (Centros al área)</option>
@@ -281,8 +301,12 @@
 					style="height:40px; width: 13rem; margin-left:1rem; margin-top:0.4rem; font-weight: bolder; color:#00bcd4;"
 					onchange="cambiarposicion6()">
 					<option value=""></option>
+					<option value="PT">PT (Puntos)</option>
+					<option value="VI">VI (Victorias)</option>
+					<option value="PJ">PJ (Partidos jugados)</option>
 					<option value="GO">GO (Goles)</option>
 					<option value="AS">AS (Asistencias)</option>
+					<option value="RE">RE (Remates)</option>
 					<option value="PC">PC (Pases completados)</option>
 					<option value="RC">RC (Regates completados)</option>
 					<option value="CA">CA (Centros al área)</option>
@@ -292,7 +316,6 @@
 					<option value="MJ">MJ (Minutos jugados)</option>
 					<option value="PA">PA (Paradas)</option>
 				</select>
-
 
 			</div>
 
@@ -362,13 +385,13 @@
 			}
 		}
 
-			function actualizarBloqueEstadistica(posicion, tipo, valor) {
-				let bloque = document.getElementById(`estadica-${posicion}`);
-				if (bloque && valor !== undefined) {
-					bloque.innerHTML = generarContenidoBloque(tipo, valor);
-				}
+		function actualizarBloqueEstadistica(posicion, tipo, valor) {
+			let bloque = document.getElementById(`estadica-${posicion}`);
+			if (bloque && valor !== undefined) {
+				bloque.innerHTML = generarContenidoBloque(tipo, valor);
 			}
-		
+		}
+
 
 		function actualizarColorTexto(equipo) {
 			let color = coloresClubes[equipo];
@@ -381,41 +404,56 @@
 		}
 
 		function generarContenidoBloque(tipo, valor) {
-			switch (tipo) {
-				case 'GO':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/GO.png">
+    switch (tipo) {
+        case 'PT':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/PT.png">
+                    <p><span class="num">${valor}</span><br>Puntos</p>`;
+        case 'VI':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/VI.png">
+                    <p><span class="num">${valor}</span><br>Victorias</p>`;
+        case 'PJ':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/PJ.png">
+                    <p><span class="num">${valor}</span><br>Partidos jugados</p>`;
+        case 'GO':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/GO.png">
                     <p><span class="num">${valor}</span><br>Goles<br>a favor</p>`;
-				case 'AS':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem; padding-left: 0.8rem" src="./img/AS.png">
+        case 'GC':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/GC.png">
+                    <p><span class="num">${valor}</span><br>Goles en contra</p>`;
+        case 'AS':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem; padding-left: 0.8rem" src="./img/AS.png">
                     <p style="transform: translate(-17px, 10px)"><span class="num">${valor}</span><br>Asistencias</p>`;
-				case 'PC':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/PC.png">
+        case 'RE':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/RE.png">
+                    <p><span class="num">${valor}</span><br>Remates</p>`;
+        case 'PC':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/PC.png">
                     <p><span class="num">${valor}</span><br>Pases<br>completados</p>`;
-				case 'RC':
-					return `<img style="z-index:2; width: 40%; height: auto; margin: 0.8rem; padding-left: 0.3rem" src="./img/RC.png">
+        case 'RC':
+            return `<img style="z-index:2; width: 40%; height: auto; margin: 0.8rem; padding-left: 0.3rem" src="./img/RC.png">
                     <p style="transform: translate(-17px, 10px)"><span class="num">${valor}</span><br>Regates<br>completados</p>`;
-				case 'CA':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem; padding-left: 0.8rem" src="./img/CA.png">
+        case 'CA':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem; padding-left: 0.8rem" src="./img/CA.png">
                     <p><span class="num">${valor}</span><br>Centros<br>al área</p>`;
-				case 'FP':
-					return `<img style="z-index:2; width: auto; height: 90%; margin: 0.4rem; padding-left: 2rem" src="./img/FP.png">
+        case 'FP':
+            return `<img style="z-index:2; width: auto; height: 90%; margin: 0.4rem; padding-left: 2rem" src="./img/FP.png">
                     <p><span class="num">${valor}</span><br>Faltas<br>provocadas</p>`;
-				case 'TA':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/TA.png">
+        case 'TA':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/TA.png">
                     <p><span class="num">${valor}</span><br>Tarjetas<br>amarillas</p>`;
-				case 'TR':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/TR.png">
+        case 'TR':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/TR.png">
                     <p><span class="num">${valor}</span><br>Tarjetas<br>rojas</p>`;
-				case 'MJ':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem;" src="./img/MJ.png">
+        case 'MJ':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem;" src="./img/MJ.png">
                     <p style="transform: translate(-17px, 10px)"><span class="num">${valor}</span><br>Minutos<br>jugados</p>`;
-				case 'PA':
-					return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/PA.png">
+        case 'PA':
+            return `<img style="z-index:2; width: 42%; height: auto; margin: 0.4rem" src="./img/PA.png">
                     <p><span class="num">${valor}</span><br>Paradas</p>`;
-				default:
-					return `<p>Dato no disponible</p>`;
-			}
-		}
+        default:
+            return `<p>Dato no disponible</p>`;
+    }
+}
 
 
 		let coloresClubes = {
@@ -475,9 +513,8 @@
 			"João Félix": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/joao-felix.png",
 			"Griezmann, Antoine": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/griezmann.png",
 			"Lewandowski, Robert": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/lewandowski.png",
+			"Michel": "https://yrecio.github.io/estadisticas-futbol/estadisticas-jugadores/siluetas/michel.png",
 		};
-
-
 
 		document.getElementById("descarga-imagen").addEventListener("click", function () {
 			// Obtener el elemento que queremos capturar
